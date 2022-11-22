@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+  qrcode:
+    build: .
+    stdin_open: true
+    tty: true
+    environment:
+      QR_CODE_FILE_NAME: 'qrcode_repo.png'
+      QR_CODE_FILE_PATH: 'generated_qrcodes'
+      QR_CODE_DATA: 'https://hub.docker.com/repository/docker/charanravela54/qrcode'
+    volumes:
+      - .:/home/script
